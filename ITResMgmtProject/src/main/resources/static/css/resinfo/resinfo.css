@@ -29,6 +29,9 @@ body {
 	float: right;
 	margin-left: 5px;
 }
+#addItemValue-input{
+	width:30% !important;
+}
 
 select, input[type="text"] {
 	padding: 3px;
@@ -36,6 +39,7 @@ select, input[type="text"] {
 	border-radius: 3px;
 	margin-bottom: 10px;
 }
+
 
 .addTable input[type="text"] {
 	margin-bottom: 0px;

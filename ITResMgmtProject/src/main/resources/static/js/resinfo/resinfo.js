@@ -159,7 +159,7 @@ $(document).ready(function(){
                 for (var i = 0; i < response.length; i++) {
                     addTableRow = "<tr>" +
                         "<td>" + response[i].addItemName + "</td>" +
-                       	"<td><input type='text' name='resDetailValue' value='"+response[i].resDetailValue+"'></td>" +
+                       	"<td><input type='text'id='addItemValue-input' name='resDetailValue' value='"+response[i].resDetailValue+"'></td>" +
                         "</tr>";
                     $('#additionalInfoTable tbody').append(addTableRow);
                 }
@@ -342,7 +342,7 @@ $(document).ready(function(){
                 for (var i = 0; i < response.length; i++) {
                     addTableRow = "<tr>" +
                         "<td>" + response[i].addItemName + "</td>" +
-                       	"<td><input type='text' name='resDetailValue' value='"+response[i].resDetailValue+"'></td>" +
+                       	"<td><input id='addItemValue-input' type='text' name='resDetailValue' value='"+response[i].resDetailValue+"'></td>" +
                         "</tr>";
                     $('#additionalInfoTable tbody').append(addTableRow);
                 }
@@ -562,7 +562,7 @@ $(document).ready(function () {
                 for (var i = 0; i < response.length; i++) {
                     addTableRow = "<tr>" +
                         "<td>" + response[i].addItemName + "</td>" +
-                       	"<td><input type='text' name='resDetailValue' value='"+response[i].resDetailValue+"'></td>" +
+                       	"<td><input type='text' name='resDetailValue' id='addItemValue-input' value='"+response[i].resDetailValue+"'></td>" +
                         "</tr>";
                     $('#additionalInfoTable tbody').append(addTableRow);
                 }
@@ -923,7 +923,7 @@ $(document).ready(function () {
                 for (var i = 0; i < response.length; i++) {
                     addTableRow = "<tr>" +
                         "<td><input type='hidden' name='addItemSn' value='"+ response[i].addItemSn +"'>" + response[i].addItemName + "</td>" +
-                       	"<td><input type='text' name='resDetailValue'>" + "</td>" +
+                       	"<td><input type='text' id='addItemValue-input' name='resDetailValue'>" + "</td>" +
                         "</tr>";
                     $('#additionalInfoTable tbody').append(addTableRow);
                 }
