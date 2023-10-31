@@ -248,7 +248,8 @@ function addItemsearch() {
 
 			if (response.length === 0) {
 				// 검색 결과가 없는 경우
-				var noResultRow = "<tr><td colspan='6'>검색결과가 없습니다</td></tr>";
+				 alert('검색된 결과가 없습니다.');
+				var noResultRow = "<tr><td colspan='6' style='font-weight: bold;'>검색결과가 없습니다</td></tr>";
 				$('#addItemTable > tbody').append(noResultRow);
 			} else {
 				// 검색 결과가 있는 경우
@@ -264,7 +265,7 @@ function addItemsearch() {
 
 					$('#addItemTable > tbody').append(addTableRow);
 				}
-				alert(response.length + "건이 조회되었습니다.");
+				//alert(response.length + "건이 조회되었습니다.");
 			}
 			return;
 		}

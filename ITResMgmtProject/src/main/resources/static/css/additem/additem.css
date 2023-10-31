@@ -95,6 +95,10 @@
 	background-color: #ECECEC; /* 호버 시 배경색 변경 */
 }
 
+#addItemSearchText::placeholder{
+	text-align: center;
+}
+
 td{
 	font-size:15px;
 }

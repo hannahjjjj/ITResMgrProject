@@ -523,6 +523,7 @@ function searchList() {
 
 			if (response.length === 0) {
 				// 검색 결과가 없는 경우
+				alert('검색된 결과가 없습니다.');
 				var noResultRow = "<tr><td colspan='7' style='text-align:center; font-weight:bold;'>검색결과가 없습니다</td></tr>";
 				$('#empTable > tbody').append(noResultRow);
 			} else {
@@ -556,7 +557,7 @@ function searchList() {
 
 					$('#empTable > tbody').append(addTableRow);
 				}
-				alert(response.length + "건이 조회되었습니다.");
+				//alert(response.length + "건이 조회되었습니다.");
 			}
 			return;
 		},
