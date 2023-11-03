@@ -185,7 +185,8 @@ public class ResInfoController {
 					if(!(existingIpSnList.size()==0)&& !resInfo.getResClassId().equals(resClass) && count >1) {
 						resInfoService.deleteAddItemValueInResInfo(resSerialId);
 						resInfoService.insertAddItemValueInResInfo(resInfo.getResSerialIdList(), resInfo.getAddItemSnList(), resInfo.getResDetailValueList());
-					}if(!(existingIpSnList.size()==0)){
+					}if(!(existingIpSnList.size()==0 && count>1)){
+						resInfoService.deleteAddItemValueInResInfo(resSerialId);
 						resInfoService.insertAddItemValueInResInfo(resInfo.getResSerialIdList(), resInfo.getAddItemSnList(), resInfo.getResDetailValueList());
 					}if(existingIpSnList.size()==0) {
 						System.out.println(resInfo.getResSerialIdList().size());
@@ -346,7 +347,7 @@ public class ResInfoController {
 	public void insertResInfo(@RequestBody ResInfo resInfo) {
         resInfoService.insertResInfo(resInfo);
         resInfoService.insertAddItemValueInResInfo(resInfo.getResSerialIdList(), resInfo.getAddItemSnList(), resInfo.getResDetailValueList());
-        resInfoService.insertIpInResInfo(resInfo.getResSerialIdList(), resInfo.getIpSnList(), resInfo.getIpTypeCodeList());
+        resInfoService.insertIpInResInfo(resInfo.getResSerialIdList2(), resInfo.getIpSnList(), resInfo.getIpTypeCodeList());
 	}
 
 

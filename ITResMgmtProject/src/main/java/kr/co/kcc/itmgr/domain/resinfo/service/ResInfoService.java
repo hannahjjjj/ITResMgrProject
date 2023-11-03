@@ -88,7 +88,7 @@ public class ResInfoService implements IResInfoService {
 	@Override
 	@Transactional
 	public void insertAddItemValueInResInfo(List<String> resSerialIdList, List<String> addItemSnList, List<String> resDetailValueList) {
-		for(int i=0; i<addItemSnList.size(); i++) {
+		for(int i=0; i<resSerialIdList.size(); i++) {
 			resInfoRepository.insertAddItemValueInResInfo(resSerialIdList.get(i), addItemSnList.get(i), resDetailValueList.get(i));
 		}
 	}

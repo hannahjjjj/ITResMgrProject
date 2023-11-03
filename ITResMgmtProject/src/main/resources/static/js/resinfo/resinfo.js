@@ -424,41 +424,19 @@ $(document).ready(function () {
 				resSerialList2.push(resSerialId);
 				ipSnList.push(ipSn.eq(i).val());
 				ipTypeCodeList.push(ipTypeCode.eq(i).val());
-				console.log(ipTypeCodeList);
 			}
-		$('.error-message').text('');
- 			if (!resClassName.trim()) {
-                $('#errormessage1').text('필수입력값을 입력하세요.');
-            }
-            if (!mgmtId.trim()) {
-	 			$('#errormessage2').text('필수입력값을 입력하세요.');
-            }
-            if (!resName.trim()) {
-		 		$('#errormessage3').text('필수입력값을 입력하세요.');
-            }
-            if (!resStatusCode.trim()) {
-		 		$('#errormessage4').text('필수입력값을 입력하세요.');
-            }
-            if (!resSn.trim()) {
-		 		$('#errormessage5').text('필수입력값을 입력하세요.');
-            }
-			if(!manufactureCompanyName.trim()){
-				$('#errormessage6').text('필수입력값을 입력하세요.');
-			}
-            if (!modelName.trim()) {
-		 		$('#errormessage7').text('필수입력값을 입력하세요.');
-            }
-            if (!installPlaceSn.trim()) {
-		 		$('#errormessage8').text('필수입력값을 입력하세요.');
-            }
-            if (!resSerialId.trim()) {
-		 		$('#errormessage9').text('필수입력값을 입력하세요.');
-            }
+			console.log(resSerialList);
+			console.log(resSerialList2);
+						if(resDetailValueList.length===0){
+							alert("부가항목값을 입력해주세요.")
+							return;
+						}
+						if(ipSnList.length===0){
+							alert("IP를 선택해주세요.")
+							return;
+						}
 
-            // 나머지 필드에 대한 유효성 검사 및 에러 메시지 추가
 
-            // 에러 메시지가 없을 경우 서버로 데이터를 전송
-            if ($('.error-message').length === 0){
 	            $.ajax({
 	                type: 'POST',
 	                url: '/resinfo/insert',
@@ -491,14 +469,7 @@ $(document).ready(function () {
 	                }),
 	                contentType: "application/json",
 	                success: function (response) {
-						if(resDetailValueList.length===0){
-							alert("부가항목값을 입력해주세요.")
-							return;
-						}
-						if(ipSnList.length===0){
-							alert("IP를 선택해주세요.")
-							return;
-						}
+						console.log(ipSnList.length);
 					    // 모달 내용을 변경할 때, 모달 요소와 그 내부 요소들을 선택합니다.
 					    var modal = $('#check-modal');
 					    var span = modal.find('#content');
@@ -512,7 +483,6 @@ $(document).ready(function () {
 	                    console.log('에러:', error);
 	                }
 	            });
-}
         });
     });
 

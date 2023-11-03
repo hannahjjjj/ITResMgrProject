@@ -169,20 +169,6 @@ public class CommonCodeController {
 		        int codeGroupResult = commonCodeService.checkIfCodeGroupIdExists(codeGroupId);
 		        int detailCodeNameResult = commonCodeService.checkIfDetailCodeNameExists(codeGroupId, detailCode);
 		        logger.info("detailCodeNameResult: " + detailCodeNameResult);
-		        if (codeGroupResult < 1) {
-		            response.setCode(400);
-		            response.setStatus("실패");
-		            response.setMessage(codeGroupId + ": 코드 그룹 ID가 존재하지 않습니다.");
-		            break; 
-		        }
-		        if (detailCodeSet.contains(detailCode) || detailCodeNameResult >= 1) {
-		            response.setCode(400);
-		            response.setStatus("실패");
-		            response.setMessage(detailCode + ": 같은 코드 그룹 내에 상세 코드가 중복되었습니다.");
-		            break;
-		        } else {
-		            detailCodeSet.add(detailCode); // Set에 'detailCode' 추가
-		        }
 		    }
 			
 			if(response.getCode() == 400) {
@@ -197,12 +183,7 @@ public class CommonCodeController {
 				String codeGroupId = updateData.getCodeGroupId();
 				String detailCode = updateData.getDetailCode();
 				int detailCodeNameResult = commonCodeService.checkIfDetailCodeNameExists(codeGroupId, detailCode);
-				if(detailCodeNameResult >= 1) {
-					response.setCode(400);
-		            response.setStatus("실패");
-		            response.setMessage(detailCode + ": 같은 코드 그룹 내에 상세 코드가 중복되었습니다.");
-		            break;
-				}
+
 			}
 			
 			if(response.getCode() == 400) {
